@@ -1,5 +1,7 @@
 import pytest
-from DriverFactory import DriverFactory
 
-def test_driver_factory():
-    driver = DriverFactory.get_instance()
+def test_driver_factory(setup):
+    print('Test')
+    driver = setup
+    assert driver is not None
+    
