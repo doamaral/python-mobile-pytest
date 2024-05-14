@@ -1,4 +1,6 @@
 import os
+from core.AndroidDriver import AndroidDriver
+from core.IOSDriver import IOSDriver
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -12,18 +14,13 @@ class DriverFactory:
             platform = os.getenv('PLATFORM', 'android').lower()
 
             if platform == 'android':
-                desired_caps = {
-                    'platformName': 'Android',
-                    'deviceName': 'Android Emulator',
-                    # Add other desired capabilities here
-                }
+                android_driver = AndroidDriver()
+                DriverFactory.instance = android_driver.create_driver()
                 print("##### Android")
+
             elif platform == 'ios':
-                desired_caps = {
-                    'platformName': 'iOS',
-                    'deviceName': 'iPhone Simulator',
-                    # Add other desired capabilities here
-                }
+                ios_driver = IOSDriver()
+                DriverFactory.instance = ios_driver.create_driver()
                 print("##### iOS")
             else:
                 raise ValueError(f'Unsupported platform: {platform}')
