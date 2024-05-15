@@ -7,8 +7,8 @@ __pycache__/
 *$py.class
 
 # Virtualenv
-env/
-*.env
+venv/
+*.venv
 venv.bak/
 
 # Pytest
