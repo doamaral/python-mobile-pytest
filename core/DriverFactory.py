@@ -16,12 +16,10 @@ class DriverFactory:
             if platform == 'android':
                 android_driver = AndroidDriver()
                 DriverFactory.instance = android_driver.create_driver()
-                print("##### Android")
 
             elif platform == 'ios':
                 ios_driver = IOSDriver()
                 DriverFactory.instance = ios_driver.create_driver()
-                print("##### iOS")
             else:
                 raise ValueError(f'Unsupported platform: {platform}')
 
