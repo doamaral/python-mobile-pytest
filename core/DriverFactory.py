@@ -1,15 +1,47 @@
 import os
+from dotenv import load_dotenv
 from core.AndroidDriver import AndroidDriver
 from core.IOSDriver import IOSDriver
-from dotenv import load_dotenv
+
 
 load_dotenv()
 
 class DriverFactory:
+    """
+    The DriverFactory class is responsible for creating and managing the instance of the driver
+    based on the platform specified in the environment variable 'PLATFORM'.
+
+    The platform can be either 'android' or 'ios'. If the instance is not already created,
+    it creates a new instance of the driver based on the platform.
+
+    Attributes:
+        instance: The instance of the driver.
+
+    Methods:
+        get_instance: Returns the instance of the driver based on the
+        platform specified in the environment variable 'PLATFORM'.
+
+    Raises:
+        ValueError: If the platform specified is not supported.
+    """
+
     instance = None
 
     @staticmethod
     def get_instance():
+        """
+        Returns the instance of the driver based on the platform 
+        specified in the environment variable 'PLATFORM'.
+
+        If the instance is not already created, it creates a new instance of the 
+        driver based on the platform. The platform can be either 'android' or 'ios'.
+
+        Returns:
+            The instance of the driver.
+
+        Raises:
+            ValueError: If the platform specified is not supported.
+        """
         if DriverFactory.instance is None:
             platform = os.getenv('PLATFORM', 'android').lower()
 
