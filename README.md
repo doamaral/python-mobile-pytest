@@ -8,7 +8,7 @@ core package is responsible for the driver management.
 - `DriverFactory`
   - Responsible to manage which specific driver is going to be instantiated according to the `PLATFORM` environment variable
   - Make sure we have only one instance available (Singleton)
-- `AndroidDriver` and `IOSDriver` are the specific drivers thar interface with `FakeAppiumDriver` binding the desired capabilities for each driver
+- `AndroidDriver` and `IOSDriver` are the specific drivers that interface with `FakeAppiumDriver` binding the desired capabilities for each driver
 - `FakeAppiumDriver` is just a dummy class to mock actual Appium/Selenium drivers
 
 ## tests
