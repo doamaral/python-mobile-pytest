@@ -1,6 +1,9 @@
 # Pre requisites
-- venv installed and environment active
-  - `source <ENV_NAME>/bin/active`
+- git clone
+- cd to the project folder 
+- `python3 -m venv .venv`
+- `source .venv/bin/active`
+- `python3 -m pip install -r requirements.txt`
 
 # Structure
 ## core package
@@ -17,7 +20,6 @@ core package is responsible for the driver management.
 - `conftest.py` is a special pytest file to glue any file to the tests
 
 # Passing Environment variables to Tests
-
 ## Using .env file
 
 ```
