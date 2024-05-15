@@ -6,9 +6,8 @@ The idea behind the abstraction is the initial information of which platform sho
 - [Pytest](https://pypi.org/project/pytest/): To support all test management
 - [Dotenv](https://pypi.org/project/python-dotenv/): To support the use of `.env` files
 
-## Pre requisites
-- git clone
-- cd to the project folder 
+## Project setup
+- Clone the repo and cd to the folder
 - Set python environment: `python3 -m venv .venv`
 - Activate python environment: `source .venv/bin/active`
 - Install dependencies: `python3 -m pip install -r requirements.txt`
