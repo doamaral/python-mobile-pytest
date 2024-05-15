@@ -24,7 +24,7 @@ def test_driver_factory(setup: FakeAppiumDriver):
         does not match the expected platform name.
     """
     driver = setup
-    print(f'This test is running over: {driver.__getattribute__("_platformName")}')
+    print(f'This test is running over: {driver.get_platform_name()}')
     assert driver is not None
-    assert driver.__getattribute__('_platformName').lower() == getenv('PLATFORM').lower()
+    assert driver.get_platform_name().lower() == getenv('PLATFORM').lower()
 
