@@ -1,17 +1,19 @@
 # Pre requisites
 - git clone
 - cd to the project folder 
-- `python3 -m venv .venv`
-- `source .venv/bin/active`
-- `python3 -m pip install -r requirements.txt`
+- Set python environment: `python3 -m venv .venv`
+- Activate python environment: `source .venv/bin/active`
+- Install dependencies: `python3 -m pip install -r requirements.txt`
 
-# Structure
+# Project Structure
 ## core package
-core package is responsible for the driver management.
+core package is responsible for the driver management. The main idea is abstract the driver instatiation to provide a single interface to be used throught the code.
+
 - `DriverFactory`
   - Responsible to manage which specific driver is going to be instantiated according to the `PLATFORM` environment variable
   - Make sure we have only one instance available (Singleton)
-- `AndroidDriver` and `IOSDriver` are the specific drivers that interface with `FakeAppiumDriver` binding the desired capabilities for each driver
+  - Tests should only call this Class to manage drivers
+- `AndroidDriver` and `IOSDriver` are the specific drivers that interface with `FakeAppiumDriver` binding the desired capabilities for each platform
 - `FakeAppiumDriver` is just a dummy class to mock actual Appium/Selenium drivers
 
 ## tests
@@ -19,16 +21,28 @@ core package is responsible for the driver management.
 - `hooks.py` is a file to manage hooks used on the tests
 - `conftest.py` is a special pytest file to glue any file to the tests
 
-# Passing Environment variables to Tests
+# Runnin tests
+In order to run the tests, we need to pass the value for PLATFORM environment variable. Currently this project supports `Android` and `iOS` values. There are 2 basic ways to set this variable value:
+
 ## Using .env file
-
+To use env file you will need to rename `.env_sample` file to `.env` and set `PLATFORM` variable with the expected value.
 ```
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
+PLATFORM=Android 
+```
+or
+```
+PLATFORM=iOS 
 ```
 
-## Passing on Command line
+after setting up `.env` file, go to the command line and run:
+- `$ pytest -s`
 
-`PLATFORM=iOS pytest -s`
+## Using on Command line
+Here we inform the value for `PLATFORM` straight on the command line, as it follows:
+```
+$ PLATFORM=iOS pytest -s
+```
+or
+```
+$ PLATFORM=Android pytest -s
+```
