@@ -1,1 +1,3 @@
-docstring-min-length=0
+[MESSAGES CONTROL]
+disable=
+    missing-docstring
