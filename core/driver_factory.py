@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
-from core.AndroidDriver import AndroidDriver
-from core.IOSDriver import IOSDriver
+from core.android_driver import AndroidDriver
+from core.ios_driver import IOSDriver
 
 
 load_dotenv()

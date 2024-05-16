@@ -1,4 +1,4 @@
-class FakeAppiumDriver:
+class MockAppiumDriver:
     def __init__(self, desired_caps):
         print('Initializing FakeAppiumDriver')
         self._desired_caps = desired_caps

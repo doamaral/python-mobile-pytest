@@ -1,4 +1,4 @@
-from core.FakeAppiumDriver import FakeAppiumDriver
+from utils.mock_appium_driver import MockAppiumDriver
 
 class IOSDriver:
     def __init__(self):
@@ -9,4 +9,4 @@ class IOSDriver:
         }
     
     def create_driver(self):
-        return FakeAppiumDriver(self.ios_desired_caps)
+        return MockAppiumDriver(self.ios_desired_caps)

@@ -1,12 +1,14 @@
-from core.FakeAppiumDriver import FakeAppiumDriver
+from utils.mock_appium_driver import MockAppiumDriver
 
 class AndroidDriver:
+    __android_desired_caps = {}
+
     def __init__(self):
-        self.android_desired_caps = {
+        self.__android_desired_caps = {
             'platformName': 'Android',
             'deviceName': 'Android Emulator',
             # Add other desired capabilities here
         }
         
     def create_driver(self):
-        return FakeAppiumDriver(self.android_desired_caps)
+        return MockAppiumDriver(self.__android_desired_caps)

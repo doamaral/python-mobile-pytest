@@ -1,1 +1,1 @@
-from hooks import setup
+from tests.hooks import setup
