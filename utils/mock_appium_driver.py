@@ -4,13 +4,13 @@ class MockAppiumDriver:
         self._desired_caps = desired_caps
         self._platform_name = desired_caps.get('platformName')
         self._device_name = desired_caps.get('deviceName')
-        
+
         print(f'Platform name: {self._platform_name}')
         print(f'Device name: {self._device_name}')
 
     def get_platform_name(self):
         return self._platform_name
-    
+
     def find_element_by_id(self, id):
         print(f'Finding element by id: {id}')
 

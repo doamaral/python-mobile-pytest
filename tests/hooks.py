@@ -1,6 +1,7 @@
 import pytest
 from core.driver_factory import DriverFactory
 
+
 @pytest.fixture(scope='module', autouse=True)
 def setup():
     """
