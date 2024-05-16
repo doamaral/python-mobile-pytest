@@ -11,8 +11,8 @@ class MockAppiumDriver:
     def get_platform_name(self):
         return self._platform_name
 
-    def find_element_by_id(self, id):
-        print(f'Finding element by id: {id}')
+    def find_element_by_id(self, element_id):
+        print(f'Finding element by id: {element_id}')
 
     def find_element_by_name(self, name):
         print(f'Finding element by name: {name}')
