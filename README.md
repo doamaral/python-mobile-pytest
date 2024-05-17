@@ -21,7 +21,7 @@ core package is responsible for the driver management. The main idea is abstract
   - Make sure we have only one instance available (Singleton)
   - Tests should only call this Class to manage drivers
 - `AndroidDriver` and `IOSDriver` are the specific drivers that interface with `FakeAppiumDriver` binding the desired capabilities for each platform
-- `FakeAppiumDriver` is just a dummy class to mock actual Appium/Selenium drivers
+- `MockAppiumDriver` is just a dummy class to mock actual Appium/Selenium drivers
 
 ### Test files
 - `test_driverfactory.py` is the test file
