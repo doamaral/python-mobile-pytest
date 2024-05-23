@@ -1,9 +1,9 @@
 from os import getenv
 from dotenv import load_dotenv
 from page_objects.home_page import HomePage
-
 from utils.mock_appium_driver import MockAppiumDriver
-load_dotenv()
+
+load_dotenv(override=False)
 
 
 def test_driver_factory(setup: MockAppiumDriver):
