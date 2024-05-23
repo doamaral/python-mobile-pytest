@@ -4,6 +4,6 @@ load_dotenv(override=False)
 
 
 class BasePage:
-    def __init__(self, driver):
-        self._driver = driver
+    def __init__(self):
+        # Super class constructor will set the platform value
         self._platform = os.getenv("PLATFORM").lower()
