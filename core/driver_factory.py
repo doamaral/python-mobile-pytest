@@ -34,7 +34,7 @@ class DriverFactory:
                 android_driver = AndroidDriver()
                 DriverFactory.instance = android_driver.create_driver()
 
-            elif platform == Platform.IOS:
+            elif platform == Platform.IOS.value:
                 ios_driver = IOSDriver()
                 DriverFactory.instance = ios_driver.create_driver()
             else:
