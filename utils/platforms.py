@@ -1,6 +1,6 @@
-from enum import Enum
+from enum import StrEnum, auto
 
 
-class Platforms(Enum):
-    ANDROID = "android"
-    IOS = "ios"
+class Platforms(StrEnum):
+    ANDROID = auto()
+    IOS = auto()
