@@ -12,4 +12,6 @@ class AndroidDriver:
         }
 
     def create_driver(self):
+        print(f'[AndroidDriver] Initializing driver for {
+              self.__android_desired_caps.get('platformName')}')
         return MockAppiumDriver(self.__android_desired_caps)
