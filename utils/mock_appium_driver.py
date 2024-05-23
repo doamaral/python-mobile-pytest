@@ -3,7 +3,7 @@ class MockAppiumDriver:
         self._desired_caps = desired_caps
         self._platform_name = desired_caps.get('platformName')
         self._device_name = desired_caps.get('deviceName')
-        print(f'[MockAppiumDriver] Setting desired capabilities for {
+        print(f'[MockAppiumDriver] Setting desired capabilities for: {
               self._platform_name}')
         print(f'[MockAppiumDriver] Device name: {self._device_name}')
 

@@ -8,8 +8,9 @@ load_dotenv(override=False)
 
 def test_driver_factory(setup: MockAppiumDriver):
     driver = setup
-    print(f'This test is running over: {driver.get_platform_name()}')
+    print(f'[test_driver_factory] This test is running over: {
+          driver.get_platform_name()}')
     assert driver is not None
     assert driver.get_platform_name().lower() == getenv('PLATFORM').lower()
-    home_page = HomePage(driver)
+    home_page = HomePage()
     home_page.click_login()
