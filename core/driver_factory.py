@@ -3,9 +3,7 @@ from dotenv import load_dotenv
 from core.android_driver import AndroidDriver
 from core.ios_driver import IOSDriver
 from utils.platforms import Platforms as Platform
-
-
-load_dotenv()
+load_dotenv(override=False)
 
 
 class DriverFactory:
