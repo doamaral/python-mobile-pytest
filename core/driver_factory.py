@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from core.android_driver import AndroidDriver
 from core.ios_driver import IOSDriver
+from utils.platforms import Platforms as Platform
 
 
 load_dotenv()
@@ -29,11 +30,11 @@ class DriverFactory:
         if DriverFactory.instance is None:
             platform = os.getenv('PLATFORM', 'android').lower()
 
-            if platform == 'android':
+            if platform == Platform.ANDROID.value:
                 android_driver = AndroidDriver()
                 DriverFactory.instance = android_driver.create_driver()
 
-            elif platform == 'ios':
+            elif platform == Platform.IOS:
                 ios_driver = IOSDriver()
                 DriverFactory.instance = ios_driver.create_driver()
             else:
