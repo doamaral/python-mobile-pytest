@@ -12,30 +12,23 @@ class DriverFactory:
 
     @staticmethod
     def get_instance():
-        """
-        Returns the instance of the driver based on the platform 
-        specified in the environment variable 'PLATFORM'.
-
-        If the instance is not already created, it creates a new instance of the 
-        driver based on the platform. The platform can be either 'android' or 'ios'.
-
-        Returns:
-            The instance of the driver.
-
-        Raises:
-            ValueError: If the platform specified is not supported.
-        """
         if DriverFactory.instance is None:
             platform = os.getenv('PLATFORM', 'android').lower()
 
-            if platform == Platform.ANDROID.value:
-                android_driver = AndroidDriver()
-                DriverFactory.instance = android_driver.create_driver()
-
-            elif platform == Platform.IOS.value:
-                ios_driver = IOSDriver()
-                DriverFactory.instance = ios_driver.create_driver()
-            else:
-                raise ValueError(f'Unsupported platform: {platform}')
+            match platform:
+                case Platform.ANDROID.value:
+                    android_driver = AndroidDriver()
+                    DriverFactory.instance = android_driver.create_driver()
+                case Platform.IOS.value:
+                    ios_driver = IOSDriver()
+                    DriverFactory.instance = ios_driver.create_driver()
+                case Platform.CLOUD_ANDROID.value:
+                    # TODO: Implement cloud android driver
+                    raise ValueError(f'Unsupported platform: {platform}')
+                case Platform.CLOUD_IOS.value:
+                    # TODO: Implement cloud ios driver
+                    raise ValueError(f'Unsupported platform: {platform}')
+                case _:
+                    raise ValueError(f'Unsupported platform: {platform}')
 
         return DriverFactory.instance
