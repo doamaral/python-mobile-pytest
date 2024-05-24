@@ -18,4 +18,6 @@ def test_driver_factory(setup_driver: MockAppiumDriver):
 def test_page_objects_environment():
     home_page = HomePage()
     home_page.click_login()
+    home_page.click_xpto()
+
     assert getenv('PLATFORM').lower() == home_page.get_platform()
