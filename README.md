@@ -43,6 +43,12 @@ PLATFORM=iOS
 after setting up `.env` file, go to the command line and run:
 - `$ pytest -s`
 
+**WARNING**: According to `python-dotenv` [library docs](https://pypi.org/project/python-dotenv/), as we use `load_dotenv(override=False)` the precedence of environment variables value will be:
+- Value of that variable in the environment.
+- Value of that variable in the .env file.
+- Default value, if provided.
+- Empty string.
+
 ### Using on Command line
 Here we inform the value for `PLATFORM` straight on the command line, as it follows:
 ```
