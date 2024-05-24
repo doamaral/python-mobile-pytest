@@ -10,3 +10,7 @@ class BasePage:
 
     def get_platform(self):
         return self._platform
+
+    def click_button(self, locator_value, locator_strategy="id"):
+        print(f'[BasePage] Clicking on button: {
+              locator_value} with strategy: {locator_strategy}')
