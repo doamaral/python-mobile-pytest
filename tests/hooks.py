@@ -15,6 +15,7 @@ def setup_driver():
     print("\n[setup] Setup driver before all tests in the module")
     driver = DriverFactory.get_instance()
     yield driver
+    driver.quit()
 
 
 @pytest.fixture(scope='function', autouse=True)
