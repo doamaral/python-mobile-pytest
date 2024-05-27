@@ -49,7 +49,8 @@ core package is responsible for the driver management. The main idea is abstract
 ## Running tests
 In order to run the tests, we need to pass the value for PLATFORM environment variable. Currently this project supports `Android` and `iOS` values.
 
-IMPORTANT: At this moment, only Android run depends on the full setup, since iOS version is mocking the driver.
+> [!IMPORTANT]
+> At this moment, only Android run depends on the full setup, since iOS version is mocking the driver.
 
 There are 2 basic ways to set this variable value:
 
