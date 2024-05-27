@@ -32,6 +32,10 @@ for more info on setting up environment for mobile test automation using Appium,
 - Set python environment: `python3 -m venv .venv`
 - Activate python environment: `source .venv/bin/active`
 - Install dependencies: `python3 -m pip install -r requirements.txt`
+- Create `app` folder on the root of the project
+  - Download [Android and iOS releases](https://github.com/webdriverio/native-demo-app/releases/tag/v1.0.8)
+  - To use the iOS version unzip it on the app folder
+- Spin up Emulator/Simulator
 
 ## Project Structure
 ### Core package
@@ -53,7 +57,7 @@ core package is responsible for the driver management. The main idea is abstract
 In order to run the tests, we need to pass the value for PLATFORM environment variable. Currently this project supports `Android` and `iOS` values.
 
 > [!IMPORTANT]
-> At this moment, only Android run depends on the full setup, since iOS version is mocking the driver.
+> Make sure your environment is good to go for both Android and iOS
 
 There are 2 basic ways to set this variable value:
 
