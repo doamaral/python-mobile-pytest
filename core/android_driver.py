@@ -1,17 +1,16 @@
-from utils.mock_appium_driver import MockAppiumDriver
+from appium import webdriver
+from appium.options.android import UiAutomator2Options
 
 
 class AndroidDriver:
     __android_desired_caps = {}
 
     def __init__(self):
-        self.__android_desired_caps = {
-            'platformName': 'Android',
-            'deviceName': 'Android Emulator',
-            # Add other desired capabilities here
-        }
+        self.__android_desired_caps = UiAutomator2Options()
+        self.__android_desired_caps.platform_version = '14.0'
+        self.__android_desired_caps.device_name = 'Pixel_3a_API_34'
+        self.__appium_server_url = 'http://localhost:4723'
 
     def create_driver(self):
-        print(f'[AndroidDriver] Initializing driver for {
-              self.__android_desired_caps.get('platformName')}')
-        return MockAppiumDriver(self.__android_desired_caps)
+        print('[AndroidDriver] Initializing')
+        return webdriver.Remote(self.__appium_server_url, options=self.__android_desired_caps)
