@@ -20,6 +20,7 @@ for more info on setting up environment for mobile test automation using Appium,
 - https://appium.io/docs/en/2.1/quickstart/
 - https://www.freecodecamp.org/news/how-to-download-and-install-xcode/
 - https://courtneyzhan.medium.com/set-up-appium-2-to-run-xcuitest-for-ios-d4fb557403f
+- https://github.com/appium/python-client/blob/master/README.md
 
 
 ## Main libraries used
