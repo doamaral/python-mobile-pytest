@@ -12,6 +12,5 @@ class IOSDriver:
         }
 
     def create_driver(self):
-        print(f'[IOSDriver] Initializing driver for {
-              self.__ios_desired_caps.get('platformName')}')
+        print('[IOSDriver] Initializing driver')
         return MockAppiumDriver(self.__ios_desired_caps)
