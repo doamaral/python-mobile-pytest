@@ -18,6 +18,9 @@ The idea behind the abstraction is the initial information of which platform sho
 for more info on setting up environment for mobile test automation using Appium, check:
 - https://nshthshah.medium.com/appium-tutorial-step-by-step-android-automation-97b84de2fc55
 - https://appium.io/docs/en/2.1/quickstart/
+- https://www.freecodecamp.org/news/how-to-download-and-install-xcode/
+- https://courtneyzhan.medium.com/set-up-appium-2-to-run-xcuitest-for-ios-d4fb557403f
+
 
 ## Main libraries used
 - [Pytest](https://pypi.org/project/pytest/): To support all test management
