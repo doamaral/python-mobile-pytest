@@ -7,8 +7,8 @@ The idea behind the abstraction is the initial information of which platform sho
 - Python 3.12+
 - All the environment set up for Appium solutions
   - Install Android Studio
-  - Install Appium: `npm install -g`
-  - Install UIAutomator2: `appium driver install uiautomator2`
+  - Install Appium: `npm install -g appium` This is the appium server
+  - Install UIAutomator2: `appium driver install uiautomator2`. The platform specific driver
   - Set JAVA_HOME and ANDROID_HOME to $PATH
 
 - Non mandatory, but helpful
@@ -22,7 +22,7 @@ for more info on setting up environment for mobile test automation using Appium,
 ## Main libraries used
 - [Pytest](https://pypi.org/project/pytest/): To support all test management
 - [Dotenv](https://pypi.org/project/python-dotenv/): To support the use of `.env` files
-- [Appium Client](https://pypi.org/project/Appium-Python-Client/)
+- [Appium Client](https://pypi.org/project/Appium-Python-Client/): the API to interact with the app through drivers like `UIAutomator2` or `XCUITest`
 
 ## Project setup
 - Clone the repo and cd to the folder
