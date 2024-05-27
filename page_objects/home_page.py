@@ -3,9 +3,11 @@ from utils.platforms import Platforms as Platform
 
 
 class HomePage(BasePage):
+
     def __init__(self):
         super().__init__()
-        print(f'[HomePage] This page is running over: {self._platform}')
+        self.log.info(
+            'this page is running over: %s', self._platform)
 
         # short strategy to define PLATFORM based locators when there are no much options and uses id as strategy by default
         self.__btn_login = 'com.example.appiumdemo:id/btn_login' if self._platform == Platform.ANDROID.value else "iOS_btn_loginAccessibilityId"
@@ -36,10 +38,10 @@ class HomePage(BasePage):
                 raise Exception('Platform not supported')
 
     def click_login(self):
-        print(f'[HomePage] Clicking on login button: {self.__btn_login}')
+        self.log.info('clicking on login button: %s', self.__btn_login)
 
     def click_xpto(self):
         self.click_button(
             self.__btn_xpto["locatorValue"], self.__btn_xpto["locatorStrategy"])
-        print(f'[HomePage] Clicking on button: {
-              self.__btn_xpto["locatorValue"]}')
+        self.log.info('clicking on xpto button: %s',
+                      self.__btn_xpto["locatorValue"])

@@ -1,5 +1,9 @@
 import pytest
+import logging
 from core.driver_factory import DriverFactory
+from utils.logger import logger
+
+log = logger(logging.DEBUG)
 
 
 @pytest.fixture(scope='module', autouse=True)
@@ -12,7 +16,7 @@ def setup_driver():
     Yields:
         driver: An instance of the driver.
     """
-    print("\n[setup] Setup driver before all tests in the module")
+    log.info('setup driver before all tests in the module')
     driver = DriverFactory.get_instance()
     yield driver
     driver.quit()
@@ -20,4 +24,4 @@ def setup_driver():
 
 @pytest.fixture(scope='function', autouse=True)
 def before_each(request):
-    print(f'\n# Running test: {request.node.name}')
+    log.info('running test: %s', request.node.name)

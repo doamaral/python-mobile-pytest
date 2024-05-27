@@ -1,8 +1,11 @@
 import os
+import logging
 from dotenv import load_dotenv
 from core.android_driver import AndroidDriver
 from core.ios_driver import IOSDriver
 from utils.platforms import Platforms as Platform
+from utils.logger import logger
+
 load_dotenv(override=False)
 
 
@@ -12,8 +15,10 @@ class DriverFactory:
 
     @staticmethod
     def get_instance():
+        log = logger(logging.DEBUG)
         if DriverFactory.instance is None:
             platform = os.getenv('PLATFORM', 'android').lower()
+            log.info('getting driver instance for %s', platform)
 
             match platform:
                 case Platform.ANDROID.value:
@@ -30,5 +35,7 @@ class DriverFactory:
                     raise ValueError(f'Unsupported platform: {platform}')
                 case _:
                     raise ValueError(f'Unsupported platform: {platform}')
+
+            log.info('driver instance set for %s', platform)
 
         return DriverFactory.instance

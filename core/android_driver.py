@@ -1,11 +1,14 @@
 import os
+import logging
 from dotenv import load_dotenv
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
+from utils.logger import logger
 
 
 class AndroidDriver:
     __android_desired_caps = None
+    log = logger(logging.DEBUG)
 
     def __init__(self):
         load_dotenv(override=False)
@@ -23,5 +26,5 @@ class AndroidDriver:
             'APPIUM_SERVER_URL', 'http://localhost:4723')
 
     def create_driver(self):
-        print('[AndroidDriver] Initializing')
+        self.log.info('Initializing')
         return webdriver.Remote(self.__appium_server_url, options=self.__android_desired_caps)

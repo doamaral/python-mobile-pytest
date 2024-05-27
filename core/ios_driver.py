@@ -1,11 +1,14 @@
 import os
+import logging
 from dotenv import load_dotenv
 from appium import webdriver
 from appium.options.ios import XCUITestOptions
+from utils.logger import logger
 
 
 class IOSDriver:
     __ios_desired_caps = None
+    log = logger(logging.DEBUG)
 
     def __init__(self):
         load_dotenv(override=False)
@@ -24,5 +27,5 @@ class IOSDriver:
             'APPIUM_SERVER_URL', 'http://localhost:4723')
 
     def create_driver(self):
-        print('[IOSDriver] Initializing driver')
+        self.log.info('Initializing driver')
         return webdriver.Remote(self.__appium_server_url, options=self.__ios_desired_caps)
