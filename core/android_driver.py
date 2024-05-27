@@ -8,7 +8,7 @@ class AndroidDriver:
     __android_desired_caps = None
 
     def __init__(self):
-        load_dotenv()
+        load_dotenv(override=False)
 
         self.__android_desired_caps = UiAutomator2Options()
 

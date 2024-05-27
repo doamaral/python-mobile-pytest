@@ -8,7 +8,7 @@ class IOSDriver:
     __ios_desired_caps = None
 
     def __init__(self):
-        load_dotenv()
+        load_dotenv(override=False)
 
         self.__ios_desired_caps = XCUITestOptions()
         self.__ios_desired_caps.platform_version = os.getenv(
